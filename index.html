@@ -10,18 +10,21 @@
     
     <style>
         :root {
-            --form-element-valid-border-color: #0066cc;
-            --background-color: #fefdfb;
-            --card-background-color: #fffbf7;
-            --card-border-color: #f0ebe5;
-            --muted-color: #7d7d7d;
-            --form-element-disabled-background-color: #f5f3f0;
+            color-scheme: light;
+            --pico-background-color: #f9f5ee;
+            --pico-color: #2f2a24;
+            --pico-muted-color: #6b6258;
+            --pico-primary: #5b5447;
+            --pico-primary-hover: #403a31;
+            --pico-card-background-color: #fffdf8;
+            --pico-card-border-color: #e8dfd3;
         }
         
         body {
             font-family: 'Georgia', 'Garamond', serif;
             letter-spacing: 0.3px;
             line-height: 1.8;
+            margin: 0;
         }
         
         h1, h2, h3, h4, h5, h6 {
@@ -32,11 +35,52 @@
         }
         
         main {
-            max-width: 750px;
+            max-width: 1160px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem;
         }
-        
+
+        .paper-layout {
+            display: grid;
+            grid-template-columns: 260px minmax(0, 1fr);
+            gap: 2rem;
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 1.5rem;
+            align-self: start;
+            background: #fffdf8;
+            border: 1px solid #e8dfd3;
+            border-radius: 12px;
+            padding: 1.2rem;
+        }
+
+        .sidebar h2 {
+            margin-top: 0;
+            font-size: 1rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: #6b6258;
+        }
+
+        .sidebar nav a {
+            display: block;
+            text-decoration: none;
+            padding: 0.3rem 0;
+            color: #403a31;
+        }
+
+        .sidebar nav a:hover {
+            text-decoration: underline;
+        }
+
         article {
-            padding: 2rem 1.5rem;
+            background: #fffdf8;
+            border: 1px solid #e8dfd3;
+            border-radius: 14px;
+            padding: 2.2rem 2rem;
+            box-shadow: 0 10px 24px rgba(45, 33, 17, 0.05);
         }
         
         a {
@@ -52,33 +96,64 @@
             border-color: #e8e5e0;
             opacity: 0.5;
         }
+
+        @media (max-width: 900px) {
+            .paper-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: static;
+            }
+        }
     </style>
 </head>
 <body>
     <main>
-        <article>
-            <h1>Gary H9</h1>
-            <p>Welcome to my digital space. This is a minimal, paper-like reading experience.</p>
-            
-            <h2>About</h2>
-            <p>A clean, distraction-free place for thoughts, projects, and ideas.</p>
-            
-            <h2>Features</h2>
-            <ul>
-                <li>Minimal design inspired by paper</li>
-                <li>Off-white background for comfortable reading</li>
-                <li>Serif typography for content</li>
-                <li>Simple, fast, no clutter</li>
-            </ul>
-            
-            <h2>Getting Started</h2>
-            <p>Edit the README.md or this HTML file to add your content. The site will update automatically.</p>
-            
-            <hr>
-            <footer>
-                <p><small>Built with <a href="https://picocss.com">Pico CSS</a></small></p>
-            </footer>
-        </article>
+        <div class="paper-layout">
+            <aside class="sidebar">
+                <h2>Contents</h2>
+                <nav>
+                    <a href="#about">About</a>
+                    <a href="#features">Features</a>
+                    <a href="#blog-sections">Blog Sections</a>
+                    <a href="#getting-started">Getting Started</a>
+                </nav>
+            </aside>
+
+            <article>
+                <h1>Gary H9</h1>
+                <p>Welcome to my digital space. This is a minimal, paper-like reading experience.</p>
+
+                <h2 id="about">About</h2>
+                <p>A clean, distraction-free place for thoughts, projects, and ideas.</p>
+
+                <h2 id="features">Features</h2>
+                <ul>
+                    <li>Minimal design inspired by paper</li>
+                    <li>Off-white background for comfortable reading</li>
+                    <li>Serif typography for content</li>
+                    <li>Simple, fast, no clutter</li>
+                </ul>
+
+                <h2 id="blog-sections">Blog Sections</h2>
+                <p>Use this space to link your blog categories:</p>
+                <ul>
+                    <li><a href="#">Essays</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Notes</a></li>
+                    <li><a href="#">Reading List</a></li>
+                </ul>
+
+                <h2 id="getting-started">Getting Started</h2>
+                <p>Edit the README.md or this HTML file to add your content. The site will update automatically.</p>
+
+                <hr>
+                <footer>
+                    <p><small>Built with <a href="https://picocss.com">Pico CSS</a></small></p>
+                </footer>
+            </article>
+        </div>
     </main>
 </body>
 </html>
