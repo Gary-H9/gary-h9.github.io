@@ -2,9 +2,9 @@
 
 Learn how to add blog posts and projects.
 
-For the Copilot-assisted, session-to-post workflow, see
-[Learn-to-Blog Copilot Skill](LEARN_TO_BLOG.md). Its authoring policy is the
-canonical guidance for generated learning notes.
+For the Copilot-assisted, session-to-post workflow, see the published
+[Learn-to-Blog Copilot Skill](https://gary-h9.github.io/articles/learn-to-blog/).
+Its authoring policy is the canonical guidance for generated learning notes.
 
 ## Writing Blog Posts
 

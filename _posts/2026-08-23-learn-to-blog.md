@@ -1,4 +1,11 @@
-# Learn-to-Blog Copilot Skill
+---
+layout: post
+title: "Learn-to-Blog Copilot Skill"
+date: 2026-08-23 19:52:20 +0000
+tags: [copilot, blogging, automation, github-actions]
+excerpt: "How to turn a supported learning from a Copilot session into a reviewed and safely published blog post."
+toc: true
+---
 
 The `learn-to-blog` skill turns a supported learning from the current Copilot
 conversation into a reviewed post for this blog.
