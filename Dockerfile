@@ -1,5 +1,5 @@
 # Multi-stage build for Jekyll + Tailwind CSS
-FROM node:24.19.0-bookworm-slim AS node
+FROM node:26.7.0-bookworm-slim AS node
 FROM ruby:4.0.6-slim-bookworm AS base
 
 # Install essential dependencies
