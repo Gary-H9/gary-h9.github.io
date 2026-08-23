@@ -74,3 +74,12 @@ toc: true
 - Do not turn uncertainty into authoritative advice.
 - Do not add promotional claims, SEO filler, or unrelated background solely to
   make the post longer.
+
+## Workflow dependencies
+
+- Pin every third-party GitHub Action to the full commit SHA of its latest
+  supported release and retain the release tag in a comment.
+- Use the latest stable supported language runtime. For production Node.js
+  workflows, use the latest LTS release rather than a non-LTS Current release.
+- Verify action releases and runtime support against their authoritative
+  upstream sources whenever a workflow is created or updated.

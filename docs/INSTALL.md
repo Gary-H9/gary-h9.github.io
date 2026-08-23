@@ -256,8 +256,8 @@ If you prefer not to use Docker, you can install dependencies locally.
 Check that you have these installed:
 
 ```bash
-ruby -v    # Should be 3.0 or higher
-node -v    # Should be 18 or higher
+ruby -v    # Should be 4.0.6
+node -v    # Should be 24.19.0
 npm -v     # Comes with Node.js
 git --version
 ```
@@ -360,9 +360,9 @@ Use [rbenv](https://github.com/rbenv/rbenv) to install a newer version:
 # Install rbenv
 curl -fsSL https://github.com/rbenv/rbenv-installer/raw/main/bin/rbenv-installer | bash
 
-# Install Ruby 3.3
-rbenv install 3.3.0
-rbenv global 3.3.0
+# Install Ruby 4.0.6
+rbenv install 4.0.6
+rbenv global 4.0.6
 
 # Verify
 ruby -v

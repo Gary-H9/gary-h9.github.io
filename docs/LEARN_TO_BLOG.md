@@ -90,4 +90,14 @@ personal detail, confidential fact, or publication-rights problem. The author
 remains responsible for the final public-content review.
 The canonical workflow and policy live in
 `.github/skills/learn-to-blog/`.
-`.github/skills/learn-to-blog/`.
+
+## Workflow dependency policy
+
+All third-party GitHub Actions are pinned to the full commit SHA of their latest
+supported release, with the corresponding release tag retained as a comment.
+Workflow language runtimes use the latest stable supported release; Node.js
+uses the latest production LTS release rather than the non-LTS Current line.
+
+When changing a workflow, verify both the action releases and runtime versions
+against their authoritative upstream sources, then run the production build
+with the selected runtimes.
