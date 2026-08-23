@@ -1,0 +1,75 @@
+name: Validate blog post
+
+on:
+  pull_request:
+    branches: ["gh-pages"]
+    paths:
+      - "_posts/**"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Find changed posts
+        id: posts
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          unexpected="$(git diff --name-only "$BASE_SHA" "$HEAD_SHA" | grep -Ev '^_posts/[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9]+(-[a-z0-9]+)*\.markdown$' || true)"
+          if [[ -n "$unexpected" ]]; then
+            echo "Post pull requests may only add correctly named Markdown posts:" >&2
+            echo "$unexpected" >&2
+            exit 1
+          fi
+
+          git diff --name-only --diff-filter=A "$BASE_SHA" "$HEAD_SHA" -- '_posts/*.markdown' > "$RUNNER_TEMP/changed-posts"
+          if [[ ! -s "$RUNNER_TEMP/changed-posts" ]]; then
+            echo "No newly added Markdown posts found." >&2
+            exit 1
+          fi
+          if git diff --quiet --diff-filter=DMRT "$BASE_SHA" "$HEAD_SHA" -- '_posts/'; then
+            exit 0
+          fi
+          echo "Existing posts must not be changed, deleted, renamed, or replaced." >&2
+          exit 1
+
+      - name: Scan changed posts
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          mapfile -t posts < "$RUNNER_TEMP/changed-posts"
+          git show "$BASE_SHA:.github/skills/learn-to-blog/scripts/scan-draft.sh" > "$RUNNER_TEMP/scan-draft.sh"
+          bash "$RUNNER_TEMP/scan-draft.sh" "${posts[@]}"
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2"
+          bundler-cache: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: Build Tailwind CSS
+        run: npm run build:css
+
+      - name: Build Jekyll site
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production

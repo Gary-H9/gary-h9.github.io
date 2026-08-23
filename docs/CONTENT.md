@@ -2,6 +2,10 @@
 
 Learn how to add blog posts and projects.
 
+For the Copilot-assisted, session-to-post workflow, see
+[Learn-to-Blog Copilot Skill](LEARN_TO_BLOG.md). Its authoring policy is the
+canonical guidance for generated learning notes.
+
 ## Writing Blog Posts
 
 ### Create a Post
@@ -229,4 +233,3 @@ Sample projects are in `_projects/`:
 - [FEATURES.md](FEATURES.md) - Feature documentation
 - [CUSTOMIZING.md](CUSTOMIZING.md) - Customize your blog
 - [FAQ.md](FAQ.md) - Common questions
-
