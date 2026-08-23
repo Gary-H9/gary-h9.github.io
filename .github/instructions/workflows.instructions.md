@@ -12,3 +12,6 @@ applyTo: ".github/workflows/**/*.yml,.github/workflows/**/*.yaml"
 - Verify action releases, commit SHAs, and runtime support against authoritative
   upstream sources whenever creating or updating a workflow.
 - Keep validation and deployment workflows on the same runtime versions.
+- Keep `.github/dependabot.yml` enabled for GitHub Actions, Bundler, npm, and
+  Docker updates. Dependabot does not update workflow runtime inputs or
+  `.tool-versions`, so check those versions manually.

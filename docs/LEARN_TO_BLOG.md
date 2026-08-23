@@ -101,3 +101,8 @@ uses the latest production LTS release rather than the non-LTS Current line.
 When changing a workflow, verify both the action releases and runtime versions
 against their authoritative upstream sources, then run the production build
 with the selected runtimes.
+
+Dependabot checks GitHub Actions, Bundler, npm, and Docker dependencies weekly.
+It can update SHA-pinned action references, but it does not update workflow
+runtime inputs or `.tool-versions`; those versions still require the manual
+upstream check described above.
