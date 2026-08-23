@@ -27,9 +27,7 @@ branch or pull request.
 
 ## 2. Draft the complete post
 
-Draft a concise, first-person learning note using the policy. Show the complete
-Markdown in one fenced block, including front matter. Also show the proposed
-destination path.
+Draft a concise, first-person learning note using the policy.
 
 Use:
 
@@ -49,8 +47,28 @@ Generalise local paths, private repository names, usernames, internal URLs, and
 other identifying details before showing the draft. Do not include credentials
 or suspected secrets.
 
-Ask whether the displayed Markdown accurately captures what the user learned.
-If not, revise and show the complete Markdown again.
+### Make the draft visible before asking for approval
+
+When an editor canvas is available:
+
+1. Persist the complete Markdown as a session-scoped workspace artifact named
+   `learning-post-draft.markdown`. Do not write it into the invoking repository.
+2. Open or focus that artifact in the editor canvas with a clear
+   `Learning post draft` title.
+3. Tell the user that the draft is visible in the editor and is not yet a
+   repository file.
+4. Use a separate, short approval prompt that asks whether the visible draft
+   accurately captures the learning.
+
+If no editor canvas is available, show the complete Markdown in a normal chat
+response first. Ask the short approval question only in the following turn.
+
+Never place the full article inside an approval control or `ask_user` question:
+long controls may be truncated, dismissed, or unavailable, leaving the user
+unable to inspect what they are being asked to approve.
+
+If the user requests changes, update the persisted artifact or show the complete
+revised Markdown again before presenting another short approval prompt.
 
 ## 3. Choose the editing handoff
 
