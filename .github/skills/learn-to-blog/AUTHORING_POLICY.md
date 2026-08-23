@@ -47,15 +47,15 @@ toc: true
   results.
 - Link primary sources when they were consulted in the session and are safe to
   publish.
-- Distinguish observed behavior from inference.
+- Distinguish observed behaviour from inference.
 - State unresolved uncertainty instead of filling it with model knowledge.
-- Do not invent benchmarks, quotations, links, API behavior, or outcomes.
+- Do not invent benchmarks, quotations, links, API behaviour, or outcomes.
 - Keep third-party quotations and code excerpts short and necessary. Prefer a
   summary and a link to the original source.
 
 ## Privacy, security, and publication rights
 
-- Omit or generalize local filesystem paths, private repository names,
+- Omit or generalise local file system paths, private repository names,
   usernames, internal hosts, issue links, customer or employer details, and
   other identifying context.
 - Never include credentials, tokens, cookies, private keys, connection strings,
@@ -64,7 +64,7 @@ toc: true
 - Do not assume that content visible to Copilot is cleared for public use.
 - Require the author to confirm both the right to publish the material and the
   absence of confidential or personal content before creating a pull request.
-- Treat automated and model-based scanning as defense in depth, not a guarantee.
+- Treat automated and model-based scanning as defence in depth, not a guarantee.
 
 ## Editorial boundaries
 

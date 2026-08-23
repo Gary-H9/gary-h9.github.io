@@ -36,7 +36,7 @@ Use:
 - `_posts/YYYY-MM-DD-slug.markdown`;
 - the current UTC date and time;
 - `layout: post`;
-- two to five lowercase, normalized tags;
+- two to five lowercase, normalised tags;
 - a concise excerpt;
 - `toc: true`; and
 - sections covering context, insight, evidence or example, caveats, and
@@ -45,7 +45,7 @@ Use:
 Do not overwrite or reuse an existing destination. If the filename is already
 present in the blog repository, ask the user to choose a different slug.
 
-Generalize local paths, private repository names, usernames, internal URLs, and
+Generalise local paths, private repository names, usernames, internal URLs, and
 other identifying details before showing the draft. Do not include credentials
 or suspected secrets.
 

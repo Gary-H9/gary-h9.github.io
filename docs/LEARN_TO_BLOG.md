@@ -53,9 +53,9 @@ the skill should be available.
 8. After checks pass, the skill explains that merge means publication and asks
    for a separate merge confirmation.
 
-No earlier approval authorizes a later gate.
+No earlier approval authorises a later gate.
 
-## App and standalone behavior
+## App and standalone behaviour
 
 When the Copilot app's project/session tools are available, the skill finds the
 project for `Gary-H9/gary-h9.github.io` and creates a dedicated worktree so the
@@ -77,12 +77,12 @@ auto-merge.
 `gh-pages` is both the source branch and the production deployment branch.
 Merging a post PR publishes it through the Pages deployment workflow.
 
-The workflow uses defense in depth:
+The workflow uses defence in depth:
 
-- model-based omission and generalization;
+- model-based omission and generalisation;
 - a deterministic scanner for common sensitive patterns;
 - GitHub push protection where available; and
-- explicit human confirmation that the content is safe and authorized for
+- explicit human confirmation that the content is safe and authorised for
   public publication.
 
 These checks reduce risk but cannot guarantee detection of every secret,
