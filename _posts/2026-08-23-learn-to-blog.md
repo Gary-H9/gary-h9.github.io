@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Learn-to-Blog Copilot Skill"
+title: "`/learn-to-blog` Copilot Skill"
 date: 2026-08-23 19:52:20 +0000
 tags: [copilot, blogging, automation, github-actions]
 excerpt: "How to turn a supported learning from a Copilot session into a reviewed and safely published blog post."
