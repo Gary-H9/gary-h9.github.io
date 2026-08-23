@@ -594,7 +594,7 @@ Before launching, verify:
 **Content:**
 - [ ] Updated `_config.yml` with your information
 - [ ] Added your posts and projects
-- [ ] Updated `about.markdown`
+- [ ] Updated `about.md`
 - [ ] Replaced demo content
 - [ ] Checked all links work
 - [ ] Spell-checked content

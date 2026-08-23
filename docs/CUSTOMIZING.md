@@ -206,7 +206,7 @@ navigation:
 
 ### About Section
 
-Edit `about.markdown` in your project root:
+Edit `about.md` in your project root:
 
 ```markdown
 ---
@@ -733,7 +733,7 @@ Your content here...
 Create a new file in your project root:
 
 ```markdown
-<!-- contact.markdown -->
+<!-- contact.md -->
 ---
 layout: page
 title: Contact

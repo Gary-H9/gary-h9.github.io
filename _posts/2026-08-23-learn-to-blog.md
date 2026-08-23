@@ -1,4 +1,11 @@
-# Learn-to-Blog Copilot Skill
+---
+layout: post
+title: "Learn-to-Blog Copilot Skill"
+date: 2026-08-23 19:52:20 +0000
+tags: [copilot, blogging, automation, github-actions]
+excerpt: "How to turn a supported learning from a Copilot session into a reviewed and safely published blog post."
+toc: true
+---
 
 The `learn-to-blog` skill turns a supported learning from the current Copilot
 conversation into a reviewed post for this blog.
@@ -40,8 +47,9 @@ the skill should be available.
 
 1. The skill decides whether the current conversation contains a clear,
    reusable learning supported by session evidence. If not, it stops.
-2. It displays the complete proposed Jekyll Markdown, including front matter,
-   for accuracy review.
+2. It persists the complete proposed Jekyll Markdown as a session-scoped draft
+   and opens it in the editor for accuracy review. If no editor is available,
+   it displays the complete Markdown in chat before asking a separate question.
 3. In the Copilot app, it creates an interactive blog worktree session based on
    `gh-pages`. In standalone CLI, editing remains in the current chat.
 4. After editing, it separately requires final Markdown approval and
@@ -54,6 +62,12 @@ the skill should be available.
    for a separate merge confirmation.
 
 No earlier approval authorises a later gate.
+
+The complete article is never embedded inside an approval control. The approval
+prompt stays short, and the draft remains visible in a separate editor or chat
+message so the author can inspect exactly what is being approved. The
+session-scoped draft is not a repository post and does not create a child
+session until the initial accuracy approval is given.
 
 ## App and standalone behaviour
 

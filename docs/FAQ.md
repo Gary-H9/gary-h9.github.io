@@ -807,7 +807,7 @@ bundle exec jekyll serve --trace
 ### Markdown not rendering?
 
 Ensure:
-- File has `.md` or `.markdown` extension
+- File has an `.md` extension
 - Front matter is valid YAML:
   ```yaml
   ---

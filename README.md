@@ -120,7 +120,7 @@ Comprehensive guides to help you:
 - **[Installation Guide](docs/INSTALL.md)** - Docker & traditional setup, troubleshooting
 - **[Customization](docs/CUSTOMIZING.md)** - Make it yours
 - **[Adding Content](docs/CONTENT.md)** - Write posts and projects
-- **[Learn-to-Blog Skill](docs/LEARN_TO_BLOG.md)** - Turn session learnings into reviewed posts
+- **[Learn-to-Blog Skill](https://gary-h9.github.io/articles/learn-to-blog/)** - Turn session learnings into reviewed posts
 - **[Features Guide](docs/FEATURES.md)** - All features explained
 - **[Deployment](docs/DEPLOYMENT.md)** - Deploy to GitHub Pages, Netlify, and more
 - **[FAQ](docs/FAQ.md)** - Common questions answered
@@ -168,7 +168,7 @@ Configuration is organized into clear sections with comments.
 
 ## 📝 Writing Your First Post
 
-Create `_posts/2025-01-15-my-first-post.markdown`:
+Create `_posts/2025-01-15-my-first-post.md`:
 
 ```yaml
 ---

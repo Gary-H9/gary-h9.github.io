@@ -6,7 +6,7 @@ script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 work_dir="$(mktemp -d)"
 trap 'rm -rf "$work_dir"' EXIT
 
-cat > "$work_dir/safe.markdown" <<'EOF'
+cat > "$work_dir/safe.md" <<'EOF'
 ---
 layout: post
 title: "A safe draft"
@@ -15,7 +15,7 @@ title: "A safe draft"
 This example contains no configured sensitive patterns.
 EOF
 
-"$script_dir/scan-draft.sh" "$work_dir/safe.markdown" >/dev/null
+"$script_dir/scan-draft.sh" "$work_dir/safe.md" >/dev/null
 
 unsafe_values=(
   "github_pat_1234567890abcdefghijklmnopqrstuvwxyz_ABCDEFGH"
@@ -31,7 +31,7 @@ unsafe_values=(
 )
 
 for ((index = 0; index < ${#unsafe_values[@]}; index++)); do
-  file="$work_dir/unsafe-$index.markdown"
+  file="$work_dir/unsafe-$index.md"
   printf '%s\n' "${unsafe_values[index]}" > "$file"
   if "$script_dir/scan-draft.sh" "$file" >/dev/null 2>&1; then
     echo "Scanner failed to block test case $index." >&2
