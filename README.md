@@ -89,8 +89,8 @@ See [docs/INSTALL.md](docs/INSTALL.md#local-setup-using-docker-recommended) for 
 If you prefer installing dependencies locally:
 
 **Prerequisites:**
-- Ruby 3.0 or higher
-- Node.js 18 or higher
+- Ruby 4.0.6
+- Node.js 24.19.0 LTS
 - Bundler and npm
 
 ```bash
@@ -120,6 +120,7 @@ Comprehensive guides to help you:
 - **[Installation Guide](docs/INSTALL.md)** - Docker & traditional setup, troubleshooting
 - **[Customization](docs/CUSTOMIZING.md)** - Make it yours
 - **[Adding Content](docs/CONTENT.md)** - Write posts and projects
+- **[Learn-to-Blog Skill](docs/LEARN_TO_BLOG.md)** - Turn session learnings into reviewed posts
 - **[Features Guide](docs/FEATURES.md)** - All features explained
 - **[Deployment](docs/DEPLOYMENT.md)** - Deploy to GitHub Pages, Netlify, and more
 - **[FAQ](docs/FAQ.md)** - Common questions answered

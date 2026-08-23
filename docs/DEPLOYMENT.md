@@ -276,7 +276,7 @@ Add these in Site settings → Build & deploy → Environment:
 | Key          | Value      |
 |--------------|------------|
 | JEKYLL_ENV   | production |
-| RUBY_VERSION | 3.3.0      |
+| RUBY_VERSION | 4.0.6      |
 
 These ensure production builds with the correct Ruby version.
 

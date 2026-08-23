@@ -279,7 +279,7 @@ bundle install
 
 ### My Ruby version is too old?
 
-This blog requires Ruby 3.0 or higher. Check your version:
+This blog uses Ruby 4.0.6. Check your version:
 
 ```bash
 ruby -v
@@ -295,12 +295,12 @@ curl -fsSL https://github.com/rbenv/rbenv-installer/raw/main/bin/rbenv-installer
 echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 source ~/.bashrc
 
-# Install Ruby 3.3
-rbenv install 3.3.0
-rbenv global 3.3.0
+# Install Ruby 4.0.6
+rbenv install 4.0.6
+rbenv global 4.0.6
 
 # Verify
-ruby -v  # Should show 3.3.0
+ruby -v  # Should show 4.0.6
 ```
 
 **Or use Docker** instead (recommended) - no Ruby installation needed!
