@@ -19,7 +19,7 @@ help a reader understand the learning.
 
 ## Jekyll format
 
-Posts live at `_posts/YYYY-MM-DD-slug.markdown` and use:
+Posts live at `_posts/YYYY-MM-DD-slug.md` and use:
 
 ```yaml
 ---

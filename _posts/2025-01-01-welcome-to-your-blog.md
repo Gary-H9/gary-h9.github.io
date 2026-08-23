@@ -127,7 +127,7 @@ Navigation links to previous and next posts appear at the bottom of each article
 ## Writing Your First Post
 
 1. **Create a new file** in `_posts/` directory
-2. **Name it** following the format: `YYYY-MM-DD-title.markdown`
+2. **Name it** following the format: `YYYY-MM-DD-title.md`
 3. **Add front matter** (see below)
 4. **Write your content** in Markdown
 5. **Save and rebuild** with `jekyll serve`
@@ -159,7 +159,7 @@ excerpt: "Brief description for previews"
 - Delete this sample post
 - Delete or update the sample posts in `_posts/`
 - Update sample projects in `_projects/`
-- Customize your `about.markdown` page
+- Customise your `about.md` page
 - Write your first real post!
 
 ## Resources
@@ -174,4 +174,3 @@ Happy blogging! 🎉
 ---
 
 **Pro Tip:** Keep this post as a reference for Markdown formatting, or delete it once you're comfortable with the syntax.
-

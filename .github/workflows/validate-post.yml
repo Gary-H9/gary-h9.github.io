@@ -24,24 +24,29 @@ jobs:
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
           HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          HEAD_REF: ${{ github.event.pull_request.head.ref }}
         run: |
-          unexpected="$(git diff --name-only "$BASE_SHA" "$HEAD_SHA" | grep -Ev '^_posts/[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9]+(-[a-z0-9]+)*\.markdown$' || true)"
-          if [[ -n "$unexpected" ]]; then
-            echo "Post pull requests may only add correctly named Markdown posts:" >&2
-            echo "$unexpected" >&2
-            exit 1
+          if [[ "$HEAD_REF" == post/* ]]; then
+            unexpected="$(git diff --name-only "$BASE_SHA" "$HEAD_SHA" | grep -Ev '^_posts/[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9]+(-[a-z0-9]+)*\.md$' || true)"
+            if [[ -n "$unexpected" ]]; then
+              echo "Generated post pull requests may only add correctly named Markdown posts:" >&2
+              echo "$unexpected" >&2
+              exit 1
+            fi
+
+            git diff --name-only --diff-filter=A "$BASE_SHA" "$HEAD_SHA" -- '_posts/*.md' > "$RUNNER_TEMP/changed-posts"
+            if ! git diff --quiet --diff-filter=DMRT "$BASE_SHA" "$HEAD_SHA" -- '_posts/'; then
+              echo "Generated post pull requests must not change, delete, rename, or replace existing posts." >&2
+              exit 1
+            fi
+          else
+            git diff --name-only --diff-filter=ACM "$BASE_SHA" "$HEAD_SHA" -- '_posts/*.md' > "$RUNNER_TEMP/changed-posts"
           fi
 
-          git diff --name-only --diff-filter=A "$BASE_SHA" "$HEAD_SHA" -- '_posts/*.markdown' > "$RUNNER_TEMP/changed-posts"
           if [[ ! -s "$RUNNER_TEMP/changed-posts" ]]; then
-            echo "No newly added Markdown posts found." >&2
+            echo "No added or modified Markdown posts found." >&2
             exit 1
           fi
-          if git diff --quiet --diff-filter=DMRT "$BASE_SHA" "$HEAD_SHA" -- '_posts/'; then
-            exit 0
-          fi
-          echo "Existing posts must not be changed, deleted, renamed, or replaced." >&2
-          exit 1
 
       - name: Scan changed posts
         env:

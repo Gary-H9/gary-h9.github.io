@@ -168,7 +168,7 @@ Configuration is organized into clear sections with comments.
 
 ## 📝 Writing Your First Post
 
-Create `_posts/2025-01-15-my-first-post.markdown`:
+Create `_posts/2025-01-15-my-first-post.md`:
 
 ```yaml
 ---

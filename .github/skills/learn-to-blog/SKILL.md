@@ -31,7 +31,7 @@ Draft a concise, first-person learning note using the policy.
 
 Use:
 
-- `_posts/YYYY-MM-DD-slug.markdown`;
+- `_posts/YYYY-MM-DD-slug.md`;
 - the current UTC date and time;
 - `layout: post`;
 - two to five lowercase, normalised tags;
@@ -52,7 +52,7 @@ or suspected secrets.
 When an editor canvas is available:
 
 1. Persist the complete Markdown as a session-scoped workspace artifact named
-   `learning-post-draft.markdown`. Do not write it into the invoking repository.
+   `learning-post-draft.md`. Do not write it into the invoking repository.
 2. Open or focus that artifact in the editor canvas with a clear
    `Learning post draft` title.
 3. Tell the user that the draft is visible in the editor and is not yet a

@@ -7,7 +7,7 @@ base_branch="gh-pages"
 script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 
 if [[ "$#" -ne 3 ]]; then
-  echo "Usage: create-post-pr.sh <markdown-file> <_posts/path.markdown> <pr-title>" >&2
+  echo "Usage: create-post-pr.sh <markdown-file> <_posts/path.md> <pr-title>" >&2
   exit 2
 fi
 
@@ -15,8 +15,8 @@ draft_file="$1"
 post_path="$2"
 pr_title="$3"
 
-if [[ ! "$post_path" =~ ^_posts/[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9]+(-[a-z0-9]+)*\.markdown$ ]]; then
-  echo "Post path must match _posts/YYYY-MM-DD-lowercase-slug.markdown." >&2
+if [[ ! "$post_path" =~ ^_posts/[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9]+(-[a-z0-9]+)*\.md$ ]]; then
+  echo "Post path must match _posts/YYYY-MM-DD-lowercase-slug.md." >&2
   exit 2
 fi
 
@@ -31,7 +31,7 @@ fi
 
 base_sha="$(gh api "repos/$repo/git/ref/heads/$base_branch" --jq '.object.sha')"
 slug="${post_path#_posts/}"
-slug="${slug%.markdown}"
+slug="${slug%.md}"
 branch="post/${slug}-$(date -u +%H%M%S)"
 branch_created=false
 pr_created=false

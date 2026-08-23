@@ -52,4 +52,3 @@ Follow these best practices for optimal results.
 ## Conclusion
 
 That's it! No need to manually define TOC items in the front matter anymore.
-

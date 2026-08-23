@@ -12,9 +12,9 @@ canonical guidance for generated learning notes.
 
 1. Create file in `_posts/`:
    ```
-   _posts/2025-01-15-my-first-post.markdown
+   _posts/2025-01-15-my-first-post.md
    ```
-   Format: `YYYY-MM-DD-title.markdown`
+   Format: `YYYY-MM-DD-title.md`
 
 2. Add front matter and content:
    ```yaml
@@ -220,8 +220,8 @@ def hello():
 ## Examples
 
 Sample posts are in `_posts/`:
-- `2025-01-01-welcome-to-your-blog.markdown`
-- `2025-05-05-optimizing-django-queries.markdown`
+- `2025-01-01-welcome-to-your-blog.md`
+- `2025-05-05-optimizing-django-queries.md`
 
 Sample projects are in `_projects/`:
 - `django-ecommerce.md`
